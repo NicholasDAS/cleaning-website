@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Cleaning | Fabulous Cleaning Services</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div style="background-image: url('toon-lambrechts-0FTI9ceTUOc-unsplash.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
+    <!-- navbar -->
+    <nav class="navbar">
+        <div class="logo"> Fabulous Cleaning  <div id="clock" style="float: right; margin-left: 20px;"></div></div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a class="active" href="booking.html">Book Now</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" class="login-btn">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- book header -->
+    <header class="section">
+        <h1 class="section-title">Book a Cleaning Service</h1>
+        <p style="max-width:700px;margin:auto;font-size:18px; color: white; text-transform: capitalize; font-size: large;">
+            Fill out the form below to schedule your cleaning.  
+            A confirmation email will follow shortly.
+        </p>
+    </header>
+
+    <!--booking form -->
+    <section class="section" style="max-width:600px;margin:auto; color: red;">
+
+        <form action="php/book.php" method="POST" style="text-align:left;">
+
+            <label>Full Name:</label>
+            <input name="name" type="text" required
+                   style="width:100%;padding:12px;margin-bottom:15px;" placeholder="enter full name">
+
+            <label>Email Address:</label>
+            <input name="email" type="email" required
+                   style="width:100%;padding:12px;margin-bottom:15px;" placeholder="enter email address">
+
+            <label>Phone Number:</label>
+            <input name="phone" type="text" required
+                   style="width:100%;padding:12px;margin-bottom:15px;" placeholder="enter phone number">
+
+            <label>Home Address:</label>
+            <input name="address" type="text" required
+                   style="width:100%;padding:12px;margin-bottom:15px;" placeholder="enter home address">
+
+            <label>Select a Service:</label>
+            <select name="service" required
+                    style="width:100%;padding:12px;margin-bottom:15px;">
+                <option value="Home Cleaning">Home Cleaning</option>
+                <option value="Office Cleaning">Office Cleaning</option>
+                <option value="Move-In / Move-Out">Move-In / Move-Out</option>
+                <option value="Deep Cleaning">Deep Cleaning</option>
+                <option value="Post-Construction">Post-Construction</option>
+            </select>
+
+            <label>Date:</label>
+            <input name="date" type="date" required
+                   style="width:100%;padding:12px;margin-bottom:15px;">
+
+            <label>Tell us about the service in the box bellow</label>
+            <textarea name="notes" rows="4"
+                   style="width:100%;padding:12px;margin-bottom:15px;" placeholder="(Optional) You can leave your WhatsApp number if you wish we can contact you through WhatsApp"></textarea>
+
+            <button type="submit" class="btn" style="width:100%;">Submit Booking</button>
+        </form>
+
+    </section>
+
+    <!-- JS for the clock -->
+    <script>
+        setInterval(() => {
+          clock.innerText = new Date().
+          toLocaleTimeString();
+        }, 100)
+       
+      
+      </script>
+
+    <!-- contact -->
+    <section class="section">
+        <h2 style="color:#c79a00;margin-bottom:15px;">Our Contact Information</h2>
+
+        <p style="font-size:18px;line-height:1.8; color: black;">
+            📍 Toronto, Ontario, Canada <br>
+            📞 (416) 555-9012 <br>
+            📧 edakinicholas@gmail.com <br>
+            🕒 Mon–Sat: 8:00 AM – 7:00 PM
+        </p>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <p>© 2025 Fabulous Cleaning Services. All Rights Reserved.</p>
+    </footer>
+</div>
+</body>
+</html>
