@@ -1,0 +1,306 @@
+/* general dashboard */
+body {
+    margin: 0;
+    font-family: "Arial", sans-serif;
+    background: #f5f5f5;
+    transition: 0.3s;
+}
+
+.dark-mode {
+    background: #151515 !important;
+    color: white !important;
+}
+
+/* side bar */
+.sidebar {
+    width: 250px;
+    background: #111;
+    color: white;
+    position: fixed;
+    height: 100vh;
+    padding-top: 20px;
+    transition: 0.3s ease;
+    z-index: 10;
+}
+
+.sidebar-title {
+    text-align: center;
+    font-size: 24px;
+    color: #c79a00;
+    margin-bottom: 30px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 15px 25px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-bottom: 1px solid #333;
+    transition: 0.3s ease;
+}
+
+.sidebar a i {
+    margin-right: 10px;
+}
+
+.sidebar a:hover {
+    background: #c79a00;
+}
+
+.sidebar a.active {
+    background: #c79a00;
+    color: black;
+}
+
+.sidebar .logout {
+    background: red;
+    color: white;
+}
+
+.sidebar .logout:hover {
+    background: #a40000;
+}
+
+/* main content */
+.main-content {
+    margin-left: 250px;
+    padding: 30px;
+    transition: 0.3s ease;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px #00000020;
+}
+
+.topbar i {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+h1 {
+    margin-bottom: 25px;
+}
+
+/* dashboard card */
+.cards-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    width: 260px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px #00000020;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card-icon {
+    font-size: 40px;
+    color: red;
+    margin-bottom: 15px;
+}
+
+/* styling for the table */
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dashboard-table th, .dashboard-table td {
+    padding: 15px;
+    text-align: left;
+}
+
+.dashboard-table th {
+    background: #c79a00;
+    color: black;
+}
+
+.dashboard-table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.dark-mode .dashboard-table {
+    background: #222;
+}
+
+.dark-mode .dashboard-table th {
+    background: #333;
+    color: #c79a00;
+}
+
+.dark-mode .dashboard-table td {
+    color: white;
+}
+
+/* dark mode */
+.dark-mode .main-content {
+    color: white;
+}
+
+.dark-mode .topbar {
+    background: #222;
+    box-shadow: none;
+}
+
+.dark-mode .card {
+    background: #222;
+    color: white;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+    .sidebar {
+        left: -270px;
+    }
+    .sidebar.open {
+        left: 0;
+    }
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+/* profile card */
+.profile-card {
+    display: flex;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px #00000020;
+    gap: 20px;
+    max-width: 650px;
+}
+
+.profile-left {
+    text-align: center;
+}
+
+.profile-icon {
+    font-size: 120px;
+    color: #c79a00;
+}
+
+.profile-right p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.profile-btn {
+    margin-top: 15px;
+    display: inline-block;
+    padding: 10px 20px;
+    background: red;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.profile-btn:hover {
+    background: #900;
+}
+
+.dark-mode .profile-card {
+    background: #222;
+}
+
+/* edit profile cards */
+.edit-profile-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px #00000020;
+    max-width: 550px;
+}
+
+.edit-profile-card label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.edit-profile-card input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.update-btn {
+    margin-top: 20px;
+    width: 100%;
+    background: red;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 6px;
+    color: white;
+}
+
+.update-btn:hover {
+    background: #900;
+}
+
+.dark-mode .edit-profile-card {
+    background: #222;
+}
+
+/* Booking Notes Column */
+.dashboard-table td:nth-child(4) {
+    max-width: 250px;
+    word-wrap: break-word;
+}
+
+.admin-card {
+    border-left: 6px solid #c79a00;
+}
+
+.delete-btn {
+    color: red;
+    font-size: 20px;
+}
+
+.delete-btn:hover {
+    color: #900;
+}
+
+/* Booking admin table cell wrapping */
+.dashboard-table td {
+    word-wrap: break-word;
+    max-width: 200px;
+}
+
+/* Notes column */
+.dashboard-table td:nth-child(8) {
+    max-width: 250px;
+}
+
+.delete-btn {
+    color: red;
+    font-size: 20px;
+}
+.delete-btn:hover {
+    color: #900;
+}
+
+
+
