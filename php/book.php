@@ -37,8 +37,10 @@ if ($name === '' || $address === '' || $service === '' || $date === '' || !filte
 $stmt = $conn->prepare("INSERT INTO bookings (name, email, phone, address, service, date, notes) 
 VALUES (?, ?, ?, ?, ?, ?, ?)");
 $stmt->bind_param("sssssss", $name, $email, $phone, $address, $service, $date, $notes);
-$stmt->execute();
-
+if (!$stmt->execute()) {
+    header("Location: ../booking.html");
+    exit();
+}
 //  auto login user after booking
 $_SESSION["user"] = $email;
 $_SESSION["name"] = $name;
