@@ -38,6 +38,7 @@ $stmt = $conn->prepare("INSERT INTO bookings (name, email, phone, address, servi
 VALUES (?, ?, ?, ?, ?, ?, ?)");
 $stmt->bind_param("sssssss", $name, $email, $phone, $address, $service, $date, $notes);
 if (!$stmt->execute()) {
+    error_log("Booking save failed: " . $stmt->error);
     header("Location: ../booking.html");
     exit();
 }
