@@ -168,8 +168,8 @@ sendEmail(
     <h1>Booking Successful!</h1>
 
     <p>
-      Thank you, <strong><?php echo $name; ?></strong>.<br>
-      Your booking has been successfully received.
+Thank you, <strong><?php echo htmlspecialchars($name, ENT_QUOTES, 'UTF-8'); ?></strong>.<br>      
+        Your booking has been successfully received.
     </p>
 
     <p>
