@@ -19,6 +19,20 @@ $service = $_POST['service'];
 $date = $_POST['date'];
 $notes = $_POST['notes'];
 
+// Validate the booking details before saving or emailing them
+$name = trim($name);
+$email = trim($email);
+$phone = trim($phone);
+$address = trim($address);
+$service = trim($service);
+$date = trim($date);
+$notes = trim($notes);
+
+if ($name === '' || $address === '' || $service === '' || $date === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    header("Location: ../booking.html");
+    exit();
+}
+
 // Save to Database
 $stmt = $conn->prepare("INSERT INTO bookings (name, email, phone, address, service, date, notes) 
 VALUES (?, ?, ?, ?, ?, ?, ?)");
